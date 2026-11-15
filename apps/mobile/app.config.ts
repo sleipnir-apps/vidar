@@ -4,17 +4,17 @@
 // PR preview).
 //
 // APP_VARIANT is set per EAS build profile (see apps/mobile/eas.json):
-//   - unset            -> "n0md3l4pP"                / com.sleipnir.n0md3l4pppascal
-//   - "staging"        -> "n0md3l4pP staging"        / com.sleipnir.n0md3l4pppascal.staging
-//   - "pr-42"          -> "n0md3l4pP pr-42"          / com.sleipnir.n0md3l4pppascal.pr42
+//   - unset            -> "vidar"                / com.sleipnir.Vidar
+//   - "staging"        -> "vidar staging"        / com.sleipnir.Vidar.staging
+//   - "pr-42"          -> "vidar pr-42"          / com.sleipnir.Vidar.pr42
 //
 // The PR number is injected by the workflow (.github/workflows/mobile-build.yml)
 // via EAS Build env vars, so each PR gets a separately installable APK.
 import type { ExpoConfig } from "expo/config";
 
-const BASE_NAME = "n0md3l4pP";
-const BASE_PACKAGE = "com.sleipnir.n0md3l4pppascal";
-const BASE_BUNDLE_ID = "com.sleipnir.n0md3l4pppascal";
+const BASE_NAME = "vidar";
+const BASE_PACKAGE = "com.sleipnir.Vidar";
+const BASE_BUNDLE_ID = "com.sleipnir.Vidar";
 
 export default (): ExpoConfig => {
   const variant = process.env.APP_VARIANT ?? "";
@@ -22,11 +22,11 @@ export default (): ExpoConfig => {
 
   const config: ExpoConfig = {
     name: BASE_NAME,
-    slug: "n0md3l4pp",
+    slug: "vidar",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./src/assets/images/icon.png",
-    scheme: "n0md3l4pp",
+    scheme: "vidar",
     userInterfaceStyle: "automatic",
     ios: {
       bundleIdentifier: BASE_BUNDLE_ID,
